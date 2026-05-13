@@ -1,7 +1,7 @@
 import type { NuevaResena, ResenaEspecifica, Resenas } from "../types/resenas";
 import type { APIError, APIResult } from "../types/util";
 
-const baseURL: string = "http://localhost:8080";
+const baseURL: string = import.meta.env.VITE_API_URL || "https://infocine-mas-production.up.railway.app";
 
 export async function mostrarResenas(): Promise<APIResult<Resenas[]>> {
     const response = await fetch(`${baseURL}/resenas/listarResenas`, {
