@@ -1,7 +1,7 @@
 import type { ControlPelicula, NuevaPelicula, PeliculaEspecifica, Peliculas } from "../types/peliculas";
 import type { APIError, APIResult } from "../types/util";
 
-const baseURL: string = import.meta.env.VITE_API_URL || "https://infocine-mas-production.up.railway.app";
+const baseURL: string = (import.meta.env.VITE_API_URL || "https://infocine-mas-production.up.railway.app").replace(/\/$/, "");
 
 export async function getAllPeliculas(): Promise<APIResult<Peliculas[]>> {
     const response = await fetch(`${baseURL}/peliculas/listarPeliculas`, {

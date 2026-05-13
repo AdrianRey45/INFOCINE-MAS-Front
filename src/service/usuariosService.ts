@@ -1,7 +1,7 @@
 import type { createUser, LoginUsuario, Usuarios } from "../types/usuarios";
 import type { APIError, APIResult } from "../types/util";
 
-const baseURL: string = import.meta.env.VITE_API_URL || "https://infocine-mas-production.up.railway.app";
+const baseURL: string = (import.meta.env.VITE_API_URL || "https://infocine-mas-production.up.railway.app").replace(/\/$/, "");
 
 export async function accesoLogin(request: LoginUsuario): Promise<APIResult<Usuarios>> {
     const response = await fetch(`${baseURL}/usuarios/iniciarSesion`, {
