@@ -1,0 +1,24 @@
+import { createBrowserRouter } from "react-router-dom";
+import EditarPelicula from "../pages/EditarPelicula";
+import EditarResena from "../pages/EditarResena";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import PageNotFound from "../pages/PageNotFound";
+import PeliculaEspecifica from "../pages/PeliculaEspecifica";
+import Register from "../pages/Register";
+import Settings from "../pages/Settings";
+import SubirPelicula from "../pages/SubirPelicula";
+import ControlPeliculas from "../pages/ControlPeliculas";
+
+export const router = createBrowserRouter([
+    {path: "*", element: <PageNotFound/>},
+    {path: "/", element: <Home/>},
+    {path: "/control", element: <ControlPeliculas/>},
+    {path: "/login", element: <Login/>},
+    {path: "/register", element: <Register/>},
+    {path: "/pelicula/:id", element: <PeliculaEspecifica/>},
+    {path: "/subirPelicula", element: <SubirPelicula/>},
+    {path: "/editarPelicula/:id", element: <EditarPelicula/>},
+    {path: "/editarResena/:id", element: <EditarResena/>},
+    {path: "/settings", element: <Settings/>}
+])
