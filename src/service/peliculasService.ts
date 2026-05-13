@@ -1,7 +1,7 @@
 import type { ControlPelicula, NuevaPelicula, PeliculaEspecifica, Peliculas } from "../types/peliculas";
 import type { APIError, APIResult } from "../types/util";
 
-const baseURL: string = "http://localhost:8080";
+const baseURL: string = import.meta.env.VITE_API_URL || "https://infocine-mas-production.up.railway.app";
 
 export async function getAllPeliculas(): Promise<APIResult<Peliculas[]>> {
     const response = await fetch(`${baseURL}/peliculas/listarPeliculas`, {
